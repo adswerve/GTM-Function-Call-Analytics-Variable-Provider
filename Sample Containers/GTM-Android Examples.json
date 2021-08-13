@@ -1,0 +1,500 @@
+{
+    "exportFormatVersion": 2,
+    "exportTime": "2021-08-11 22:27:31",
+    "containerVersion": {
+        "path": "accounts/12345/containers/23456/versions/0",
+        "accountId": "12345",
+        "containerId": "23456",
+        "containerVersionId": "0",
+        "container": {
+            "path": "accounts/12345/containers/23456",
+            "accountId": "12345",
+            "containerId": "23456",
+            "name": "FC Sample Variables - iOS",
+            "publicId": "GTM-XXXXXXX",
+            "usageContext": [
+                "ANDROID_SDK_5"
+            ],
+            "fingerprint": "1628712859585",
+            "tagManagerUrl": "https://tagmanager.google.com/#/container/accounts/12345/containers/23456/workspaces?apiLink=container"
+        },
+        "variable": [
+            {
+                "accountId": "12345",
+                "containerId": "23456",
+                "variableId": "4",
+                "name": "action",
+                "type": "c",
+                "notes": "Constant representing the string \"action\" for use in function call variables (to prevent typos).\n\nWhen configuring a function call variable, {{action}} should be passed as a key and the value paired with it should be {{fetch_variable}} or {{enforce_default}}. The former is used to retrieve a value from the app; the latter is used to enforce a default value if a GTM variable is empty or not set.\n\nExamples:\n\nTo retrieve the value of \"foo_variable\" from the app, pass the following key-value pairs in the configuration:\n\n{{action}} --> {{fetch_variable}}\n{{variable_name}} --> foo_variable\n\nTo retrieve the value of \"foo_variable\" from the app, and apply a default value of \"bar\" if no value is available, pass the following key-value pairs in the configuration:\n\n{{action}} --> {{fetch_variable}}\n{{variable_name}} --> foo_variable\n{{default_value}} --> bar\n\nTo use a default value of \"bar\" when the GTM variable {{UP - foo}} is empty or not set, pass the following key-value pairs in the configuration:\n\n{{action}} --> {{enforce_default}}\n{{current_value}} --> {{UP - foo}}\n{{default_value}} --> bar\n\nTo ensure that the function call variable is only passed in CDs when {{UP - foo}} contains a valid value, pass the following key-value pairs in the configuration:\n\n{{action}} --> {{enforce_default}}\n{{current_value}} --> {{UP - foo}}\n{{default_none}}",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "value",
+                        "value": "action"
+                    }
+                ],
+                "fingerprint": "1628712905819",
+                "parentFolderId": "3"
+            },
+            {
+                "accountId": "12345",
+                "containerId": "23456",
+                "variableId": "5",
+                "name": "AnalyticsVariableProviderClass",
+                "type": "c",
+                "notes": "On Android, the value entered above should be the fully-qualified class name where Tag Manager's CustomVariableProvider interface has been implemented in the app. \"Fully-qualified\" means \"including the complete package name\" (e.g., com.mydomain.myapp.AnalyticsVariableProvider).  If the class is located in the project's primary package, you can use the built-in {{App ID}} variable (which provides the app's package name) combined with the class name (e.g., {{App ID}}.AnalyticsVariableProvider). If it's located in a subfolder, you will need to insert the name of the subfolder (e.g., for a subfolder called \"analytics\" you would enter {{App ID}}.analytics.AnalyticsVariableProvider).\n\nOn iOS, if the app is developed in Objective C, you only need to enter the class name where Tag Manager's TAGCustomFunction protocol has been implemented in the app (e.g., AVPAnalyticsVariableProvider). If the app is developed in Swift, where each class is namespaced by module, you need to enter the module name and class name (e.g., for a module called \"MyModule\" and a class named \"AnalyticsVariableProvider\" you would enter MyModule.AnalyticsVariableProvider.)\n\nIt's fine to rename the AnalyticsVariableProvider file, or move it, as long as the final name is entered here per the instructions above.",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "value",
+                        "value": "com.mydomain.myapp.AnalyticsVariableProvider"
+                    }
+                ],
+                "fingerprint": "1628712905820",
+                "parentFolderId": "3"
+            },
+            {
+                "accountId": "12345",
+                "containerId": "23456",
+                "variableId": "6",
+                "name": "variable_name",
+                "type": "c",
+                "notes": "Constant representing the string \"variable_name\" for use in function call variables (to prevent typos).\n\nFor function call variables where the {{action}} is {{fetch_variable}}, the function call variable configuration should pass {{variable_name}} as a key paired with the name of the variable being requested from the app.\n\nFor example, to retrieve the value of \"foo_variable\" from the app, pass the following key-value pairs in the configuration:\n\n{{action}} --> {{fetch_variable}}\n{{variable_name}} --> foo_variable",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "value",
+                        "value": "variable_name"
+                    }
+                ],
+                "fingerprint": "1628712905821",
+                "parentFolderId": "3"
+            },
+            {
+                "accountId": "12345",
+                "containerId": "23456",
+                "variableId": "7",
+                "name": "default_value",
+                "type": "c",
+                "notes": "Constant representing the string \"default_value\" for use in function call variables (to prevent typos).\n\nTo supply a default value, the function call variable configuration should pass {{default_value}} as a key paired with the desired default value.\n\nExamples:\n\nTo retrieve the value of \"foo_variable\" from the app, and apply a default value of \"bar\" if no value is available, pass the following key-value pairs in the configuration:\n\n{{action}} --> {{fetch_variable}}\n{{variable_name}} --> foo_variable\n{{default_value}} --> bar\n\nTo use a default value of \"bar\" when the GTM variable {{UP - foo}} is empty or not set, pass the following key-value pairs in the configuration:\n\n{{action}} --> {{enforce_default}}\n{{current_value}} --> {{UP - foo}}\n{{default_value}} --> bar\n\nNote: Including the key {{default_none}} will cause a {{default_value}} key-value pair to be ignored. You should use either {{default_value}} or {{default_none}}.",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "value",
+                        "value": "default_value"
+                    }
+                ],
+                "fingerprint": "1628712905821",
+                "parentFolderId": "3"
+            },
+            {
+                "accountId": "12345",
+                "containerId": "23456",
+                "variableId": "8",
+                "name": "fetch_variable",
+                "type": "c",
+                "notes": "Constant representing the string \"fetch_variable\" for use in function call variables (to prevent typos).\n\nTo retrieve a value from the app, the function call variable configuration should pass {{action}} as a key paired with {{fetch_variable}} as the value. \n\nFor example, to retrieve the value of \"foo_variable\" from the app, pass the following key-value pairs in the configuration:\n\n{{action}} --> {{fetch_variable}}\n{{variable_name}} --> foo_variable",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "value",
+                        "value": "fetch_variable"
+                    }
+                ],
+                "fingerprint": "1628712905822",
+                "parentFolderId": "3"
+            },
+            {
+                "accountId": "12345",
+                "containerId": "23456",
+                "variableId": "9",
+                "name": "FC - logged_in",
+                "type": "funcm",
+                "notes": "This function call variable requests the value of \"logged_in\" from the app. If there is no value available, the {{default_value}} key says that \"false\" should be returned.",
+                "parameter": [
+                    {
+                        "type": "LIST",
+                        "key": "functionArgument",
+                        "list": [
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "key",
+                                        "value": "{{action}}"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "{{fetch_variable}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "key",
+                                        "value": "{{variable_name}}"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "logged_in"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "key",
+                                        "value": "{{default_value}}"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "false"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "classPath",
+                        "value": "{{AnalyticsVariableProviderClass}}"
+                    }
+                ],
+                "fingerprint": "1628712905822",
+                "parentFolderId": "3"
+            },
+            {
+                "accountId": "12345",
+                "containerId": "23456",
+                "variableId": "10",
+                "name": "FC - environment",
+                "type": "funcm",
+                "notes": "This function call variable requests the value of \"environment\" from the app. If there is no value available, the {{default_value}} key ensures that this variable will return \"production\".",
+                "parameter": [
+                    {
+                        "type": "LIST",
+                        "key": "functionArgument",
+                        "list": [
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "key",
+                                        "value": "{{action}}"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "{{fetch_variable}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "key",
+                                        "value": "{{variable_name}}"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "environment"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "key",
+                                        "value": "{{default_value}}"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "production"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "classPath",
+                        "value": "{{AnalyticsVariableProviderClass}}"
+                    }
+                ],
+                "fingerprint": "1628712905823",
+                "parentFolderId": "3"
+            },
+            {
+                "accountId": "12345",
+                "containerId": "23456",
+                "variableId": "11",
+                "name": "default_none",
+                "type": "c",
+                "notes": "Constant representing the string \"default_none\" for use in function call variables (to prevent typos).\n\nBackground:\n\nBest practice is to only send a CD to GA when it contains a valid value. This is especially important for user- and session-scoped CDs (to prevent overwriting the existing value in GA), but it's good practice for hit-scoped CDs as well -- unless there is a compelling need for a non-empty default value, like \"(not available)\", to signal the absence of a value.\n\nTo ensure that any CDs mapped to a function call variable are EXCLUDED from GA hits when there is no value available, the function call variable's configuration should pass {{default_none}} as a key. There is no need to pass a value for this key.\n\nExamples:\n\nFor function call variables where the {{action}} is {{enforce_default}}, the following key-value pairs will ensure that the function call variable is only passed in CDs when {{UP - foo}} contains a valid value:\n\n{{action}} --> {{enforce_default}}\n{{current_value}} --> {{UP - foo}}\n{{default_none}}\n\nFor function call variables where the {{action}} is {{fetch_variable}}, the following key-value pairs will ensure that the function call variable is only passed in CDs when the \"foo_variable\" value retrieved from the app contains a valid value:\n\n{{action}} --> {{fetch_variable}}\n{{variable_name}} --> foo_variable\n{{default_none}}\n\nNote: Including the key {{default_none}} will cause a {{default_value}} key-value pair to be ignored. You should use either {{default_value}} or {{default_none}}.",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "value",
+                        "value": "default_none"
+                    }
+                ],
+                "fingerprint": "1628712905823",
+                "parentFolderId": "3"
+            },
+            {
+                "accountId": "12345",
+                "containerId": "23456",
+                "variableId": "12",
+                "name": "FC - language_code",
+                "type": "funcm",
+                "notes": "This function call variable requests the (two-letter) \"language_code\" from the app (e.g., \"en\"). If there is no value available, the {{default_value}} key says that the built-in {{Language}} variable should be returned. In either case, the value returned indicates the user's chosen language for the device (that is, the language being used by the device's operating system).\n\nNote: This function call variable is designed to work around the fact that GTM on iOS uses five-character ISO language-region codes (e.g., \"en-us\"), while on Android it uses the two-letter code (e.g, \"en\"). By using the two-letter code on both platforms, the {{LT - Language}} variable can more efficiently manage the code-->language mapping.",
+                "parameter": [
+                    {
+                        "type": "LIST",
+                        "key": "functionArgument",
+                        "list": [
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "key",
+                                        "value": "{{action}}"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "{{fetch_variable}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "key",
+                                        "value": "{{variable_name}}"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "language_code"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "key",
+                                        "value": "{{default_value}}"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "{{Language}}"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "classPath",
+                        "value": "{{AnalyticsVariableProviderClass}}"
+                    }
+                ],
+                "fingerprint": "1628712905824",
+                "parentFolderId": "3"
+            },
+            {
+                "accountId": "12345",
+                "containerId": "23456",
+                "variableId": "13",
+                "name": "FC - timezone_offset",
+                "type": "funcm",
+                "notes": "This function call variable requests the value of \"timezone_offset\" from the app. If there is no value available, the {{default_none}} key ensures that any CDs mapped to this variable will be excluded from the hit to GA.",
+                "parameter": [
+                    {
+                        "type": "LIST",
+                        "key": "functionArgument",
+                        "list": [
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "key",
+                                        "value": "{{action}}"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "{{fetch_variable}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "key",
+                                        "value": "{{variable_name}}"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "timezone_offset"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "key",
+                                        "value": "{{default_none}}"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "classPath",
+                        "value": "{{AnalyticsVariableProviderClass}}"
+                    }
+                ],
+                "fingerprint": "1628712905824",
+                "parentFolderId": "3"
+            },
+            {
+                "accountId": "12345",
+                "containerId": "23456",
+                "variableId": "14",
+                "name": "FC - timestamp",
+                "type": "funcm",
+                "notes": "This function call variable requests the value of \"timestamp\" from the app. If there is no value available, the {{default_none}} key ensures that any CDs mapped to this variable will be excluded from the hit to GA.",
+                "parameter": [
+                    {
+                        "type": "LIST",
+                        "key": "functionArgument",
+                        "list": [
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "key",
+                                        "value": "{{action}}"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "{{fetch_variable}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "key",
+                                        "value": "{{variable_name}}"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "timestamp"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "key",
+                                        "value": "{{default_none}}"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "classPath",
+                        "value": "{{AnalyticsVariableProviderClass}}"
+                    }
+                ],
+                "fingerprint": "1628712905825",
+                "parentFolderId": "3"
+            },
+            {
+                "accountId": "12345",
+                "containerId": "23456",
+                "variableId": "15",
+                "name": "enforce_default",
+                "type": "c",
+                "notes": "Constant representing the string \"enforce_default\" for use in function call variables (to prevent typos).\n\nTo enforce a default value when a GTM variable is empty or not set, the function call variable configuration should pass {{action}} as a key paired with {{enforce_default}} as the value. \n\nFor example, to use a default value of \"bar\" when the GTM variable {{UP - foo}} is empty or not set, pass the following key-value pairs in the configuration:\n\n{{action}} --> {{enforce_default}}\n{{current_value}} --> {{UP - foo}}\n{{default_value}} --> bar",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "value",
+                        "value": "enforce_default"
+                    }
+                ],
+                "fingerprint": "1628720829093",
+                "parentFolderId": "3"
+            }
+        ],
+        "folder": [
+            {
+                "accountId": "12345",
+                "containerId": "23456",
+                "folderId": "3",
+                "name": "Function Call Variables",
+                "fingerprint": "1628712905818"
+            }
+        ],
+        "builtInVariable": [
+            {
+                "accountId": "12345",
+                "containerId": "23456",
+                "type": "LANGUAGE",
+                "name": "Language"
+            }
+        ],
+        "fingerprint": "1628720851814",
+        "tagManagerUrl": "https://tagmanager.google.com/#/versions/accounts/12345/containers/23456/versions/0?apiLink=version"
+    }
+}
